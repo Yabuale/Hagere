@@ -1,0 +1,103 @@
+body{
+background-image: url("images/Snow-Animation-Background.svg");
+background-attachment: fixed;
+background-size: cover;
+
+}
+
+.container{
+    margin:  15px auto;
+    width:55%;
+    
+    background: rgba( 255, 255, 255, 0 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 9px );
+    -webkit-backdrop-filter: blur( 9px );
+    border-radius: 10px;
+    color: #C36A2D;
+    
+}
+.home-logo{
+    margin-top: 5px;
+}
+.motto{
+    text-align: center;
+}
+.forms{
+    text-align: center;
+}
+.input {
+    border: none;
+    color: #d66b23;
+    
+    margin: 5px auto;
+    width:250px;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #e8e8e8;
+    box-shadow: 20px 20px 60px #aca9a9,
+           -20px -20px 60px #ccc4c4;
+    transition: 0.3s;
+   }
+   
+   .input:focus {
+    outline-color: #E2C275;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+           inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+   }
+   .button {
+    width: 180px;
+    height: 50px;
+    
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #ceb038;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #E2C275;
+    margin: 10px auto 5px;
+  }
+  
+  button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #d9a500;
+    box-shadow: 4px 5px 17px -4px #8e3a00;
+    
+  }
+  
+  button::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, #EADCA6,#E2C275 ,#C36A2D);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+  
+  button:hover::before {
+    width: 250%;
+  }
+  .icons{
+ text-align: center;
+ margin: 35px auto;
+ 
+  }
+  i{
+    margin-left: 10px;
+   }
+   button a{
+    text-decoration: none;
+    color:inherit;
+   }
