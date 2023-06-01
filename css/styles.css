@@ -141,7 +141,7 @@ hr{
    color:black;
    font-family: 'Kanit', sans-serif;
    font-size: 3rem;
-   padding-right: 800px;
+   padding-right: 700px;
    padding-top: 25px;
    margin: auto;
   
@@ -152,6 +152,27 @@ hr{
    height: 50px;
    
 }
+.signlogbtn {
+   -webkit-border-radius: 28;
+   -moz-border-radius: 28;
+   border-radius: 28px;
+   -webkit-box-shadow: 1px 2px 4px #666666;
+   -moz-box-shadow: 1px 2px 4px #666666;
+   box-shadow: 1px 2px 4px #666666;
+   font-family: Courier New;
+   color: #000000;
+   font-size: 20px;
+   background: #F38053;
+   padding: 10px 20px 10px 20px;
+   border: solid #AED4F5 2px;
+   text-decoration: none;
+   margin-top: 35px;
+ }
+ 
+ .signlogbtn:hover {
+   background: #EADCA6;
+   text-decoration: none;
+ }
 h2,p{
    color: aliceblue;
    margin-top: 0%;
