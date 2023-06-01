@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Form</title>
+  <link rel="stylesheet" href="css/additem.css">
+</head>
+<body>
+  <h1>Add a Product</h1>
+
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price" required>
+
+    <div class="file-drop-area" id="file-drop-area">
+      <span class="file-message">Drag and drop an image file here or click to upload.</span>
+      <input type="file" class="file-input" id="image" name="image" accept="image/*" required>
+    </div>
+
+    <input type="submit" value="Submit">
+    <a href="index.html"><input type="button" value="home"></a>
+  </form>
+   
+  <script>
+    const fileDropArea = document.getElementById('file-drop-area');
+    const fileInput = document.getElementById('image');
+
+    fileDropArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      fileDropArea.classList.add('highlight');
+    });
+
+    fileDropArea.addEventListener('dragleave', () => {
+      fileDropArea.classList.remove('highlight');
+    });
+
+    fileDropArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      fileDropArea.classList.remove('highlight');
+      const files = e.dataTransfer.files;
+      fileInput.files = files;
+    });
+
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files.length > 0) {
+        fileDropArea.classList.add('highlight');
+      }
+    });
+  </script>
+</body>
+</html>
