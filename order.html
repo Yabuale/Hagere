@@ -20,15 +20,15 @@
             <li>
                <h1 class="hageretext1">HAGERE</h1>
             </li>
-            <li class="linav">
-               <a href="youtube.com">home</a>
-            </li>
-            <li class="linav">
-               <a href="youtube.com">about</a>
-            </li>
-            <li class="linav">
-               <a href="">contact us</a>
-            </li>
+            <div id="mySidenav" class="sidenav">
+               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+               <a href="index.html">Home</a>
+               <a href="#jumppro">Products</a>
+               <a href="#jumpfoot">Contact</a>
+             </div>
+             
+               <span class="sidebarr" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+             
          </ul>
       </nav>
    </div>
@@ -37,7 +37,7 @@
          <h1 class="hagereshoptxt">Hagere Shop</h1>
       <h3 class="hagshopdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</h3>
       </div>
-      <div>
+      <div id="jumppro">
        <form class="forms">
          <div class="prods">
             <div class="pro">
@@ -181,7 +181,7 @@
        </form>  
       </div>
    </section>
-   <div class="footer">
+   <div id="jumpfoot" class="footer">
       <div class="anchor-links">
           
           <a class="anchor-link" href="https://twitter.com/">twitter</a>
@@ -193,5 +193,6 @@
           <h4>@2023 copyrights reserved</h4>
       </div>
   </div>
+  <script src="coffe.js"></script>
 </body>
 </html>
