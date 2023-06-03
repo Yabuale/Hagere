@@ -15,7 +15,7 @@ exit;
 
 }
 else{
-   echo "error updating record: ".$sqlinsert."<br>".$conn->error;
+   echo "error saving record: ".$sqlinsert."<br>".$conn->error;
 }
 $conn->close();
 ?>

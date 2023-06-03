@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    $sql = "SELECT * FROM users WHERE EMAIL = '$email' AND PASSWORD = '$password'";
    $result = $conn->query($sql);
 
-   if ($result->num_rows == 1) { // if user exists
+   if ($result->num_rows >= 1) { // if user exists
        $_SESSION['email'] = $email; // set session variable
        header('Location: order.html'); // redirect to dashboard page
        exit();

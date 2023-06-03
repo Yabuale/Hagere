@@ -3,11 +3,17 @@
 <head>
   <title>Product Form</title>
   <link rel="stylesheet" href="css/additem.css">
+  <style>
+    .sucess{
+      border-color: rgba(58, 214, 58, 0.616);
+      background-color: rgba(140, 235, 140, 0.521);
+    }
+  </style>
 </head>
 <body>
   <h1>Add a Product</h1>
 
-  <form>
+  <form action="additem.php" method="POST" enctype="multipart/form-data">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
 
@@ -18,17 +24,18 @@
     <input type="text" id="price" name="price" required>
 
     <div class="file-drop-area" id="file-drop-area">
-      <span class="file-message">Drag and drop an image file here or click to upload.</span>
+      <span class="file-message" id="fileMessage">Drag and drop an image file here or click to upload.</span>
       <input type="file" class="file-input" id="image" name="image" accept="image/*" required>
     </div>
 
     <input type="submit" value="Submit">
-    <a href="index.html"><input type="button" value="home"></a>
+    <a href="admin.html"><input type="button" value="home"></a>
   </form>
    
   <script>
     const fileDropArea = document.getElementById('file-drop-area');
     const fileInput = document.getElementById('image');
+    const fileMessage = document.getElementById('fileMessage');
 
     fileDropArea.addEventListener('dragover', (e) => {
       e.preventDefault();
@@ -41,9 +48,12 @@
 
     fileDropArea.addEventListener('drop', (e) => {
       e.preventDefault();
+      fileMessage.innerHTML="IMAGE SELECTED";
       fileDropArea.classList.remove('highlight');
+      fileDropArea.classList.add('sucess');
       const files = e.dataTransfer.files;
       fileInput.files = files;
+      
     });
 
     fileInput.addEventListener('change', () => {
