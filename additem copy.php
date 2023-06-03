@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $sqlinsert="INSERT INTO item (NAME, DESCRIPTION, PRICE, IMAGE) VALUES ('$name', '$description', '$price', '$imageName')";
             $sqlinsert1="INSERT INTO users (EMAIL, PASSWORD, TYPE) VALUES ('$email','$password','user')";
-               if ($conn->query($sqlinsert) === TRUE ){
+               if ($conn->query($sqlinsert) === TRUE){
 
                   header("Location: admin.html");
              exit;

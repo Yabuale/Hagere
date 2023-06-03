@@ -81,7 +81,7 @@ include 'connection.php';
                 <td>".$row["IMAGE"]."</td>
                 <td class='actions'>
                     <a href='deleteitem.php?name=".$row["NAME"]."' class='delete-btn' onclick='return confirmDelete();'>Delete</a>
-                    <a href='update.php?email=".$row["NAME"]."' class='update-btn'>Update</a>
+                    <a href='updateitem.php?name=".$row["NAME"]."' class='update-btn'>Update</a>
                 </td>
             </tr>";
         }
