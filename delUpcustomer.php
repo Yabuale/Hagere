@@ -43,6 +43,19 @@ include 'connection.php';
         td.actions .update-btn {
             background-color: #4caf50;
         }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +80,7 @@ include 'connection.php';
                 <td>".$row["LOCATIONS"]."</td>
                 <td>".$row["EMAIL"]."</td>
                 <td class='actions'>
-                    <a href='delete.php?email=".$row["EMAIL"]."' class='delete-btn'>Delete</a>
+                    <a href='delete.php?email=".$row["EMAIL"]."' class='delete-btn' onclick='return confirmDelete();'>Delete</a>
                     <a href='update.php?email=".$row["EMAIL"]."' class='update-btn'>Update</a>
                 </td>
             </tr>";
@@ -79,5 +92,12 @@ include 'connection.php';
 
     $conn->close();
     ?>
+
+    <a href="admin.html" class="back-button">Back</a>
+    <script>
+function confirmDelete() {
+    return confirm("Are you sure you want to delete this customer?");
+}
+</script>
 </body>
 </html>
