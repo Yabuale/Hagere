@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
    if ($result->num_rows >= 1) { // if user exists
        $_SESSION['email'] = $email; // set session variable
-       header('Location: order.html'); // redirect to dashboard page
+       header('Location: orderbuy.php'); // redirect to dashboard page
        exit();
    } 
 
@@ -26,5 +26,6 @@ else {
        echo "Invalid username or password";
    }
 }}
+session_destroy();
 $conn->close();
 ?>
