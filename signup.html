@@ -18,18 +18,15 @@
     </div>
     <div class="forms">
      <form method="post" action="regstration.php">
-        <input type="text" name="fname" class="input" placeholder="First Name"> <br/>
-        <input type="text" name="lname" class="input" placeholder="Last Name"> <br/>
-        <input type="text" name="location" class="input" placeholder="Location"> <br/>
-        <input type="text" name="email" class="input" placeholder="Email"> <br/>
-        <input type="password" name="password" class="input" placeholder="Password"><br/>
-        <input type="password" name="text" class="input" placeholder="Conform"><br/>
-        <button type="submit" class="button"> sign up </button>
-        <br/>
-        
-
+        <input type="text" name="fname" id="fname" class="input" placeholder="First Name"> <br/>
+        <input type="text" name="lname" id="lname" class="input" placeholder="Last Name"> <br/>
+        <input type="text" name="location" id="location" class="input" placeholder="Location"> <br/>
+        <input type="text" name="email" id="email" class="input" placeholder="Email"> <br/>
+        <input type="password" name="password" id="password" class="input" placeholder="Password"><br/>
+        <input type="password" name="confirm" id="confirm" class="input" placeholder="Confirm Password"><br/>
+        <button type="button" class="button" onclick="validateForm()">Sign Up</button>
      </form>
-     <button class="button" action="login.html"> <a href="login.html"> login </a></button>
+     <button class="button" onclick="location.href='login.html'">Login</button>
     </div>
     <div class="icons">
         <i class="fa-brands fa-instagram fa-bounce fa-xl"></i>
@@ -38,9 +35,64 @@
         <i class="fa-brands fa-facebook fa-bounce fa-xl"></i>
         <br/>
         <br/>
-        </div>
-        
-       
     </div>
+    </div>
+    <script>
+        function validateForm() {
+            const firstName = document.getElementById("fname").value;
+            const lastName = document.getElementById("lname").value;
+            const location = document.getElementById("location").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm").value;
+
+            if (firstName === "") {
+                alert("Please enter your first name.");
+                return false;
+            }
+            if (!/^[a-zA-Z]+$/.test(firstName)) {
+                alert("Please enter a valid first name.");
+                return false;
+            }
+            if (lastName === "") {
+                alert("Please enter your last name.");
+                return false;
+            }
+            if (!/^[a-zA-Z]+$/.test(lastName)) {
+                alert("Please enter a valid last name.");
+                return false;
+            }
+            if (location === "") {
+                alert("Please enter your location.");
+                return false;
+            }
+            if (email === "") {
+                alert("Please enter your email address.");
+                return false;
+            }
+            const emailRegex = /^\S+@\S+\.\S+$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            if (password === "") {
+                alert("Please enter a password.");
+                return false;
+            }
+            if (password.length < 8) {
+                alert("Your password must be at least 8 characters long.");
+                return false;
+            }
+            if (confirmPassword === "") {
+                alert("Please confirm your password.");
+                return false;
+            }
+            if (password !== confirmPassword) {
+                alert("Your passwords do not match.");
+                return false;
+            }
+            document.querySelector("form").submit();
+        }
+    </script>
 </body>
 </html>
