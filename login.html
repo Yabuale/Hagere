@@ -20,15 +20,14 @@
        <h3 class="login">LOGIN</h3>
        </div>
        <form method="post" action="login.php">
-        <input type="text" name="email" class="input" placeholder="Email">
-        <input type="password" name="password" class="input" placeholder="Password...">
-
-<br/>
-        <button type="submit" class="button"> Login </button>
+        <input type="text" name="email" id="email" class="input" placeholder="Email">
+        <input type="password" name="password" id="password" class="input" placeholder="Password...">
+      
         <br/>
-        
-
-       </form>
+        <button type="button" class="button" onclick="validateForm()">Login</button>
+        <br/>
+      </form>
+      
        <button class="button"> <a href="signup.html"> sign up </a> </button>
        <div class="icons">
        <i class="fa-brands fa-instagram fa-bounce fa-xl"></i>
@@ -46,6 +45,31 @@
     
   
 
+    <script>
+        function validateForm() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
 
+            if (email === "") {
+                alert("Please enter your email address.");
+                return false;
+            }
+            const emailRegex = /^\S+@\S+\.\S+$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            if (password === "") {
+                alert("Please enter a password.");
+                return false;
+            }
+            if (password.length < 8) {
+                alert("Your password must be at least 8 characters long.");
+                return false;
+            }
+            
+            document.querySelector("form").submit();
+        }
+    </script>
 </body>
 </html>
