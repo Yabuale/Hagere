@@ -1,8 +1,8 @@
 <?php
 include 'connection.php';
-
-
-header('Location: index.html');
+session_start();
 session_destroy();
+header('Location: index.html');
+
 $conn->close();
 ?>
