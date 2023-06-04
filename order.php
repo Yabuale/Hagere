@@ -17,14 +17,14 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 $sqlinsert = "INSERT INTO `order` (EMAIL, ITEMS, TOTALPRICE) VALUES ('$email', '$name', '$price')";
-    $result = mysqli_query($conn, $sqlinsert);
+$result = mysqli_query($conn, $sqlinsert);
 
-   // Check if the query was successful
-   if ($result) {
-      header('Location: orderbuy.php');
-   } else {
-      echo "Error: " . mysqli_error($conn);
-   }
+// Check if the query was successful
+if ($result) {
+   echo '<script>alert("Order placed successfully!"); window.location.href = "orderbuy.php";</script>';
+} else {
+  echo "Error: " . mysqli_error($conn);
+}
 
 $conn->close();
 ?>
